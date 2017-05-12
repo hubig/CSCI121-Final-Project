@@ -31,10 +31,10 @@ def main(file):
         verbphrase = verb_phrase(verbs,advs)
                                    
 class noun_phrase:
-        def __init__(noun,word,adj,article):
+        def __init__(noun,word,adj):
                 noun.x = word
                 noun.y = adj
-                noun.z = article
+                
                           
         def getNoun(noun):
                 """Gets the noun"""
@@ -44,9 +44,7 @@ class noun_phrase:
                 """Gets the adjective"""
                 return noun.y
                           
-        def getArticle(noun):
-                """Gets the article"""
-                return noun.z
+
                           
         def __str__(noun):
                 return str(noun.z)+" "+str(noun.y)+" "+str(noun.z)
@@ -66,15 +64,18 @@ class verb_phrase:
                 return str(verb.y) + " " + str(verb.x)
 
 
-articles = ["a", "an", "the"]
+
 def articlenounmix(noun):
         article_chooser = random.randrange(2) #assigns article_chooser a int between 0 and 1
         if article_chooser == 0:
                 noun = "the " + noun #use article "the" if == 0
-        else:
+                return noun
+        elif article_chooser ==1:
                 for i in noun:
                         if i in "a, A, e, E, i, I, o, O, u, U":
                                 noun = "an " + noun
                         break #only iterates through the first char in the word
+                return noun
         else:
                 noun = "a " + noun
+                return noun
