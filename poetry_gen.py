@@ -3,9 +3,13 @@ import random #needed for random selection of words
 
 def main(file):
    #"""Opens up one of the two random files."""
+   poem = open("Poem_Generator.txt","w")
    sentence = []
    for i in range(5):
-      setence[i] = create_sentence()
+      sentence[i] = create_sentence()
+      poem.write(sentence[i]
+      poem.write("/n")
+   poem.close()
 def create_sentence():
       
         articles1 = ["the","an"]
