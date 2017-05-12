@@ -3,6 +3,11 @@ import random #needed for random selection of words
 
 def main(file):
    #"""Opens up one of the two random files."""
+   sentence = []
+   for i in range(5):
+      setence[i] = create_sentence()
+def create_sentence():
+      
         articles1 = ["the","an"]
         articles2 = ['the','an']
         animal = file.open("Animals.txt", "r")
@@ -29,7 +34,12 @@ def main(file):
         adv_list = adv.split(",")
         advs = adv_list[random.randrange(0,len(adv_list)+1)]
         verbphrase = verb_phrase(verbs,advs)
-                                   
+        animal.close()
+        verb.close()
+        object_file.close()
+        adj.close()
+        adv.close()
+        return nounphrase.nounphrase + verbphrase.verbphrase
 class noun_phrase:
         def __init__(noun,word,adj):
                 noun.x = word
@@ -46,7 +56,7 @@ class noun_phrase:
                           
 
                           
-        def __str__(noun):
+        def nounphrase(noun):
                 return str(noun.z)+" "+str(noun.y)+" "+str(noun.z)
 
 class verb_phrase:
@@ -60,7 +70,7 @@ class verb_phrase:
         def getAdv(verb):
                 return verb.y
 
-        def __str__(verb):
+        def verbphrase(verb):
                 return str(verb.y) + " " + str(verb.x)
 
 
